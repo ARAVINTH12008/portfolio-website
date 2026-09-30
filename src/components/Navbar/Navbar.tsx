@@ -16,6 +16,8 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ArrowOutwardRoundedIcon from "@mui/icons-material/ArrowOutwardRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
+import { layout } from "../../constants/layout";
+import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
 
 import { colors } from "../../theme";
 import { navigationItems } from "../../constants/navigation";
@@ -106,7 +108,7 @@ const Navbar = () => {
           disableGutters
           sx={{
             width: "100%",
-            maxWidth: "1280px",
+            maxWidth: layout.contentWidth,
             minHeight: `${NAVBAR_HEIGHT}px !important`,
             mx: "auto",
             px: {
@@ -133,8 +135,9 @@ const Navbar = () => {
               p: 0,
               color: colors.text.primary,
               fontSize: {
-                xs: "1.05rem",
-                sm: "1.15rem",
+                xs: "1.1rem",
+                sm: "1.2rem",
+                lg: "1.3rem",
               },
               fontWeight: 800,
               letterSpacing: "-0.03em",
@@ -193,7 +196,11 @@ const Navbar = () => {
                       px: 1.35,
                       py: 1,
                       color: isActive ? colors.text.primary : colors.text.muted,
-                      fontSize: "0.84rem",
+                      fontSize: {
+                        lg: "0.92rem",
+                        xl: "0.96rem",
+                      },
+
                       fontWeight: isActive ? 700 : 600,
 
                       "&::after": {
@@ -227,9 +234,10 @@ const Navbar = () => {
           </Box>
 
           <Button
-            type="button"
+            component="a"
+            href="/resume/Aravinth_Baskaran_Resume.pdf"
+            download="Aravinth_Baskaran_Resume.pdf"
             variant="outlined"
-            onClick={() => scrollToSection("resume")}
             sx={{
               display: {
                 xs: "none",
@@ -467,6 +475,31 @@ const Navbar = () => {
               );
             })}
           </List>
+
+          <Button
+            component="a"
+            href="/resume/Aravinth_Baskaran_Resume.pdf"
+            download="Aravinth_Baskaran_Resume.pdf"
+            variant="outlined"
+            startIcon={<DownloadRoundedIcon />}
+            onClick={() => setIsDrawerOpen(false)}
+            sx={{
+              mt: 3,
+              minHeight: "52px",
+              px: 3,
+              borderColor: "rgba(96, 165, 250, 0.35)",
+              color: colors.primary.light,
+              backgroundColor: "rgba(15, 23, 42, 0.35)",
+              backdropFilter: "blur(10px)",
+
+              "&:hover": {
+                borderColor: colors.primary.light,
+                backgroundColor: "rgba(37, 99, 235, 0.1)",
+              },
+            }}
+          >
+            Download Resume
+          </Button>
 
           <Box sx={{ mt: "auto", pt: 4 }}>
             <Typography
