@@ -216,12 +216,15 @@ const Navbar = () => {
                           ${colors.primary.main},
                           ${colors.secondary.main}
                         )`,
+                        transformOrigin: "center",
                         opacity: isActive ? 1 : 0,
                         transform: isActive ? "scaleX(1)" : "scaleX(0)",
-                        transition: "opacity 200ms ease, transform 200ms ease",
+                        transition:
+                          "transform 350ms cubic-bezier(0.4, 0, 0.2, 1), opacity 350ms ease",
                       },
 
                       "&:hover": {
+                        transition: "all 0.3s ease",
                         color: colors.text.primary,
                         backgroundColor: "rgba(148, 163, 184, 0.08)",
                       },

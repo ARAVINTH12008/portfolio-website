@@ -357,7 +357,7 @@ const HeroSection = () => {
               }}
             >
               <Typography
-                component="p"
+                component="div"
                 sx={{
                   color: colors.text.secondary,
                   fontSize: {
@@ -372,6 +372,7 @@ const HeroSection = () => {
               >
                 Building as a
                 <Box
+                  component="span"
                   sx={{
                     display: "inline-block",
                     minWidth: {
